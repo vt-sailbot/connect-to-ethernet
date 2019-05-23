@@ -1,0 +1,13 @@
+[Unit]
+Description="Automatic LAN Connection Builder"
+ConditionHost="beaglebone"
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash /opt/connect-to-wifi/connect-to-ethernet.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
